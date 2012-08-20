@@ -30,7 +30,7 @@ class Receivers::Charity
     end
   end
 
-  def self.name
+  def self.payload_key
     'charity'
   end
 
@@ -43,7 +43,7 @@ class Receivers::Charity
 end
 ```
 
-There are a couple of important points to note about receivers. Firstly you must define a class method called `name` which holds the value of the root node of the payload you wish this class to receive. Secondly is the list of accepted attributes, these are attributes that are known about and this class can handle. And lastly is the receive method, this needs to return `true` or `false` depending on what you do with the data.
+There are a couple of important points to note about receivers. Firstly you must define a class method called `payload_key` which holds the value of the root node of the payload you wish this class to receive. Secondly is the list of accepted attributes, these are attributes that are known about and this class can handle. And lastly is the receive method, this needs to return `true` or `false` depending on what you do with the data.
 
 Register the receiver with the registry in an initializer.
 
