@@ -5,11 +5,11 @@ module Incoming
     end
 
     def register receiver
-      @receivers[receiver.name] = receiver
+      @receivers[receiver.payload_key] = receiver
     end
 
     def registered? receiver
-      @receivers[receiver.name]
+      @receivers[receiver.payload_key]
     end
 
     def for payload

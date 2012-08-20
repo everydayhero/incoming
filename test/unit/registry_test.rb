@@ -3,7 +3,7 @@ require 'test_helper'
 module Incoming
   class RegistryTest < MiniTest::Unit::TestCase
     def test_registed_is_true_with_a_registered_receiver
-      receiver = OpenStruct.new :name => 'receiver'
+      receiver = OpenStruct.new :payload_key => 'receiver'
       registry = Registry.new
       registry.register receiver
 
@@ -24,7 +24,7 @@ module Incoming
 
     def test_handler_for_returns_receiver
       klass = Class.new do
-        def self.name
+        def self.payload_key
           'receiver'
         end
       end
@@ -37,7 +37,7 @@ module Incoming
 
     def test_for_initializes_klass
       klass = Class.new do
-        def self.name
+        def self.payload_key
           'receiver'
         end
 
